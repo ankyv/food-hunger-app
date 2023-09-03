@@ -1,0 +1,30 @@
+{
+  "name": "food-hunger-app",
+  "version": "1.0.0",
+  "description": "This is a React Project",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iankitvarshney/food-hunger-app.git"
+  },
+  "author": "Ankit Varshney",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iankitvarshney/food-hunger-app/issues"
+  },
+  "homepage": "https://github.com/iankitvarshney/food-hunger-app#readme",
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "cosmiconfig": "^8.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
