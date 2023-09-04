@@ -22,12 +22,21 @@ const Body = () => {
     // console.log(
     //   json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     // );
-    setAllRestaurants(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilteredRestaurants(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+
+    let restaurantData;
+
+    for (let i = 0; i < json?.data?.cards.length; i++) {
+      restaurantData =
+        json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants;
+
+      if (restaurantData !== undefined) {
+        break;
+      }
+    }
+
+    setAllRestaurants(restaurantData);
+    setFilteredRestaurants(restaurantData);
   }
 
   function filterData(restaurants, searchText) {
