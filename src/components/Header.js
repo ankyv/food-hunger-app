@@ -4,12 +4,12 @@ const Search = () => {
 
 const Header = () => {
   return (
-    <div>
+    <div className="header">
       <div>
         <h1>Food Hunger</h1>
       </div>
       <div>
-        <ul>
+        <ul className="nav-items">
           <li>
             <Search />
           </li>

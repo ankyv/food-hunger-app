@@ -1,0 +1,18 @@
+.header {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-items {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+}
+
+.nav-items > li {
+  padding: 0 8px;
+}
