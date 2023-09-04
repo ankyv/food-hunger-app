@@ -50,6 +50,8 @@ const Body = () => {
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
+            const filteredData = filterData(allRestaurants, searchText);
+            setFilteredRestaurants(filteredData);
           }}
         />
         <button
@@ -63,9 +65,16 @@ const Body = () => {
         </button>
       </div>
       <div className="restaurant-list">
-        {filteredRestaurants?.map((restaurant) => (
-          <RestaurantCard {...restaurant?.info} key={restaurant?.info?.id} />
-        ))}
+        {filteredRestaurants.length === 0 ? (
+          <h4>
+            Oops! We could not understand what you mean, try rephrasing the
+            query
+          </h4>
+        ) : (
+          filteredRestaurants?.map((restaurant) => (
+            <RestaurantCard {...restaurant?.info} key={restaurant?.info?.id} />
+          ))
+        )}
       </div>
     </div>
   );

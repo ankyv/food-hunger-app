@@ -39,7 +39,7 @@
 .restaurant-list {
   border: 1px solid black;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   margin: 20px 0;
