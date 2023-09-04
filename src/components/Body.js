@@ -3,7 +3,10 @@ import { restaurantList } from "../constants";
 import RestaurantCard from "./RestaurantCard";
 
 const Body = () => {
-  const [restaurants, setRestaurants] = useState(restaurantList);
+  const [allRestaurants, setAllRestaurants] = useState(restaurantList);
+
+  const [filteredRestaurants, setFilteredRestaurants] =
+    useState(allRestaurants);
 
   const [searchText, setSearchText] = useState("");
 
@@ -30,15 +33,15 @@ const Body = () => {
         <button
           className="search-btn"
           onClick={() => {
-            const filteredData = filterData(restaurants, searchText);
-            setRestaurants(filteredData);
+            const filteredData = filterData(allRestaurants, searchText);
+            setFilteredRestaurants(filteredData);
           }}
         >
           Search
         </button>
       </div>
       <div className="restaurant-list">
-        {restaurants.map((restaurant) => (
+        {filteredRestaurants.map((restaurant) => (
           <RestaurantCard {...restaurant.info} key={restaurant.info.id} />
         ))}
       </div>
