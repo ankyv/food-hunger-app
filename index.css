@@ -16,3 +16,18 @@
 .nav-items > li {
   padding: 0 8px;
 }
+
+.main {
+  border: 1px solid black;
+  margin: 8px 0;
+  padding: 40px;
+}
+
+.search-container {
+  border: 1px solid black;
+  padding: 12px;
+}
+
+.search-container > input {
+  margin-right: 8px;
+}

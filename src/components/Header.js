@@ -1,7 +1,3 @@
-const Search = () => {
-  return <input type="text" placeholder="Search" />;
-};
-
 const Header = () => {
   return (
     <div className="header">
@@ -10,9 +6,6 @@ const Header = () => {
       </div>
       <div>
         <ul className="nav-items">
-          <li>
-            <Search />
-          </li>
           <li>Home</li>
           <li>About</li>
           <li>Contact</li>
