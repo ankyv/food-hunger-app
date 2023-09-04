@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .header {
   border: 1px solid black;
   display: flex;
@@ -30,4 +34,28 @@
 
 .search-container > input {
   margin-right: 8px;
+}
+
+.restaurant-list {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  padding: 40px 100px;
+}
+
+.restaurant-card {
+  border: 1px solid black;
+  border-radius: 12px;
+  /* height: 200px; */
+  width: 250px;
+  margin: 20px;
+  padding: 12px;
+}
+
+.restaurant-card > img {
+  border-radius: 12px;
+  width: 100%;
 }
