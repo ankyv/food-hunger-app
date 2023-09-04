@@ -59,3 +59,12 @@
   border-radius: 12px;
   width: 100%;
 }
+
+.shimmer-card {
+  background-color: lightgray;
+  border-radius: 12px;
+  width: 250px;
+  height: 200px;
+  margin: 20px;
+  padding: 12px;
+}

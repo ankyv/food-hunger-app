@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState(null);
@@ -37,7 +38,9 @@ const Body = () => {
     });
   }
 
-  return (
+  return !allRestaurants ? (
+    <Shimmer />
+  ) : (
     <div className="main">
       <div className="search-container">
         <input
