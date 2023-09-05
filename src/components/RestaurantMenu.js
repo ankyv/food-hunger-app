@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
+import { IMG_CDN_URL } from "../constants";
 import useRestaurant from "../utils/useRestaurant";
 
 const RestaurantMenu = () => {
@@ -20,10 +21,7 @@ const RestaurantMenu = () => {
         <div className="restaurant-image">
           <img
             className="restaurant-image"
-            src={
-              "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/" +
-              restaurantInfo?.cloudinaryImageId
-            }
+            src={IMG_CDN_URL + restaurantInfo?.cloudinaryImageId}
           />
         </div>
         <div className="restaurant-info">
@@ -49,10 +47,7 @@ const RestaurantMenu = () => {
                       </div>
                       <div className="food-item-image">
                         <img
-                          src={
-                            "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/" +
-                            foodItem?.card?.info?.imageId
-                          }
+                          src={IMG_CDN_URL + foodItem?.card?.info?.imageId}
                         />
                       </div>
                     </div>

@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
+import { API_DATA_URL } from "../constants";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState(null);
@@ -17,9 +18,7 @@ const Body = () => {
   }, []);
 
   async function getRestaurants() {
-    const response = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const response = await fetch(API_DATA_URL);
     const json = await response.json();
     // console.log(
     //   json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
