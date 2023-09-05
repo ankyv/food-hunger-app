@@ -98,3 +98,27 @@
 .restaurant-info {
   padding: 20px 12px;
 }
+
+.menu-category {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 20px;
+}
+
+.food-item {
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 80px;
+  margin: 10px;
+}
+
+.food-item-details {
+  margin-right: 50px;
+}
+
+.food-item-image > img {
+  border-radius: 6px;
+  width: 140px;
+}
