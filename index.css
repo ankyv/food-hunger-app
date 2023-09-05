@@ -68,3 +68,8 @@
   margin: 20px;
   padding: 12px;
 }
+
+.footer {
+  border: 1px solid black;
+  text-align: center;
+}
