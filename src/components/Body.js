@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import { filterData } from "../utils/helper";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState(null);
@@ -38,14 +39,6 @@ const Body = () => {
 
     setAllRestaurants(restaurantData);
     setFilteredRestaurants(restaurantData);
-  }
-
-  function filterData(restaurants, searchText) {
-    return restaurants?.filter((restaurant) => {
-      return restaurant?.info?.name
-        ?.toLowerCase()
-        ?.includes(searchText?.toLowerCase());
-    });
   }
 
   return !allRestaurants ? (
