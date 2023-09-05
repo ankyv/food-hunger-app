@@ -73,3 +73,28 @@
   border: 1px solid black;
   text-align: center;
 }
+
+.restaurant-details {
+  border: 1px solid black;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 20px 0;
+  padding: 12px 100px;
+}
+
+.restaurant-image {
+  margin-right: 12px;
+}
+
+.restaurant-image > img {
+  border-radius: 12px;
+  /* width: 220px; */
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.restaurant-info {
+  padding: 20px 12px;
+}
