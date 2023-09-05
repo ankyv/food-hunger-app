@@ -4,6 +4,7 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import { API_DATA_URL } from "../constants";
+import useOnline from "../utils/useOnline";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState(null);
@@ -12,6 +13,8 @@ const Body = () => {
     useState(allRestaurants);
 
   const [searchText, setSearchText] = useState("");
+
+  const isOnline = useOnline();
 
   useEffect(() => {
     getRestaurants();
@@ -38,6 +41,15 @@ const Body = () => {
 
     setAllRestaurants(restaurantData);
     setFilteredRestaurants(restaurantData);
+  }
+
+  if (!isOnline) {
+    return (
+      <div>
+        <h2>Connection Error</h2>
+        <p>Please check your internet connection and try again</p>
+      </div>
+    );
   }
 
   return !allRestaurants ? (
