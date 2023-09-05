@@ -7,6 +7,8 @@ const RestaurantMenu = () => {
 
   const [restaurant, setRestaurant] = useState(null);
 
+  const restaurantInfo = restaurant?.cards[0]?.card?.card?.info;
+
   useEffect(() => {
     getRestaurantInfo(resId);
   }, []);
@@ -18,7 +20,7 @@ const RestaurantMenu = () => {
     );
     const json = await response.json();
     // console.log(json);
-    setRestaurant(json?.data?.cards[0]?.card?.card?.info);
+    setRestaurant(json?.data);
   }
 
   return !restaurant ? (
@@ -31,15 +33,15 @@ const RestaurantMenu = () => {
             className="restaurant-image"
             src={
               "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/" +
-              restaurant?.cloudinaryImageId
+              restaurantInfo?.cloudinaryImageId
             }
           />
         </div>
         <div className="restaurant-info">
-          <h2 className="restaurant-title">{restaurant?.name}</h2>
-          <p>{restaurant?.cuisines.join(", ")}</p>
-          <h4>{restaurant?.avgRating} stars</h4>
-          <h4>{restaurant?.costForTwo}</h4>
+          <h2 className="restaurant-title">{restaurantInfo?.name}</h2>
+          <p>{restaurantInfo?.cuisines?.join(", ")}</p>
+          <h4>{restaurantInfo?.avgRating} stars</h4>
+          <h4>{restaurantInfo?.costForTwo}</h4>
         </div>
       </div>
     </div>
