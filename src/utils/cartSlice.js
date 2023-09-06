@@ -7,7 +7,24 @@ const cartSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      state.items.push(action.payload);
+      const isItemUnique = (foodItem) => {
+        const foodItemId = foodItem?.card?.info?.id;
+
+        for (let i = 0; i < state?.items?.length; i++) {
+          const { id } = state?.items[i]?.card?.info;
+          if (id === foodItemId) {
+            return false;
+          }
+        }
+
+        return true;
+      };
+
+      const isUnique = isItemUnique(action.payload);
+
+      if (isUnique) {
+        state.items.push(action.payload);
+      }
     },
     removeItem: (state) => {
       state.items.pop();
