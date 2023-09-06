@@ -3,12 +3,22 @@ import { useDispatch } from "react-redux";
 import { increaseItem, decreaseItem, removeItem } from "../utils/cartSlice";
 import { useState } from "react";
 
-const FoodItem = ({ id, count, name, imageId, price }) => {
+const FoodItem = ({
+  id,
+  count,
+  name,
+  imageId,
+  price,
+  cartTotal,
+  setCartTotal,
+}) => {
   const [totalPrice, setTotalPrice] = useState(count * price);
 
   const dispatch = useDispatch();
 
   const handleDecreaseItem = () => {
+    setCartTotal(cartTotal - price);
+
     if (count === 1) {
       dispatch(removeItem(id));
     } else {
@@ -20,6 +30,7 @@ const FoodItem = ({ id, count, name, imageId, price }) => {
   const handleIncreaseItem = () => {
     dispatch(increaseItem(id));
     setTotalPrice(totalPrice + price);
+    setCartTotal(cartTotal + price);
   };
 
   return (
