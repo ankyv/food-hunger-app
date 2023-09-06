@@ -24,7 +24,12 @@ const Cart = () => {
       </button>
       <div>
         {cartItems?.map((foodItem) => {
-          return <FoodItem {...foodItem?.card?.info} />;
+          return (
+            <FoodItem
+              key={foodItem?.card?.info?.id}
+              {...foodItem?.card?.info}
+            />
+          );
         })}
       </div>
     </div>
