@@ -7,12 +7,12 @@ const cartSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      const isItemUnique = (foodItem) => {
-        const foodItemId = foodItem?.card?.info?.id;
+      const isItemUnique = () => {
+        const itemId = action.payload.id;
 
-        for (let i = 0; i < state?.items?.length; i++) {
-          const { id } = state?.items[i]?.card?.info;
-          if (id === foodItemId) {
+        for (const item of state.items) {
+          if (item.foodItem.id === itemId) {
+            item.count++;
             return false;
           }
         }
@@ -20,10 +20,11 @@ const cartSlice = createSlice({
         return true;
       };
 
-      const isUnique = isItemUnique(action.payload);
-
-      if (isUnique) {
-        state.items.push(action.payload);
+      if (isItemUnique()) {
+        state.items.push({
+          foodItem: action.payload,
+          count: 1,
+        });
       }
     },
     removeItem: (state, action) => {
