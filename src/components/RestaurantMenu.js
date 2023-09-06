@@ -60,7 +60,7 @@ const RestaurantMenu = () => {
                         <button
                           className="add-btn"
                           onClick={() => {
-                            addFoodItem(foodItem);
+                            addFoodItem(foodItem?.card?.info);
                           }}
                         >
                           Add
