@@ -118,7 +118,19 @@
   margin-right: 50px;
 }
 
+.food-item-image {
+  display: flex;
+  flex-direction: column;
+}
+
 .food-item-image > img {
   border-radius: 6px;
   width: 140px;
+}
+
+.add-btn {
+  background-color: transparent;
+  padding: 8px 20px;
+  margin: 12px;
+  cursor: pointer;
 }
