@@ -23,11 +23,12 @@ const Cart = () => {
         Clear Cart
       </button>
       <div>
-        {cartItems?.map((foodItem) => {
+        {cartItems?.map((item) => {
           return (
             <FoodItem
-              key={foodItem?.card?.info?.id}
-              {...foodItem?.card?.info}
+              key={item?.foodItem?.id}
+              count={item?.count}
+              {...item?.foodItem}
             />
           );
         })}
