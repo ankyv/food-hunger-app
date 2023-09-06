@@ -1,13 +1,24 @@
 import { IMG_CDN_URL } from "../constants";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { removeItem } from "../utils/cartSlice";
 
-const FoodItem = ({ name, imageId, price }) => {
+const FoodItem = ({ id, name, imageId, price }) => {
   const [quantity, setQuantity] = useState(1);
 
+  const dispatch = useDispatch();
+
+  // if (quantity === 0) {
+  //   dispatch(removeItem(id));
+  // }
+
   const handleDecreaseQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
+    if (quantity === 1) {
+      dispatch(removeItem(id));
+      return;
     }
+
+    setQuantity(quantity - 1);
   };
 
   const handleIncreaseQuantity = () => {
