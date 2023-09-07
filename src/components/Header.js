@@ -9,31 +9,33 @@ const Header = () => {
 
   return (
     <div className="header">
-      <div>
-        <h1>Food Hunger</h1>
-      </div>
-      <div>
-        <ul className="nav-items">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-          <li>
-            <Link to="/cart">Cart - {cartItems.length}</Link>
-          </li>
-          <li
-            onClick={() => {
-              setIsLoggedIn(!isLoggedIn);
-            }}
-          >
-            {isLoggedIn ? "Logout" : "Login"}
-          </li>
-        </ul>
+      <div className="container">
+        <div>
+          <h1 className="title">Food Hunger</h1>
+        </div>
+        <div>
+          <ul className="nav-items">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+            <li>
+              <Link to="/cart">Cart - {cartItems.length}</Link>
+            </li>
+            <li
+              onClick={() => {
+                setIsLoggedIn(!isLoggedIn);
+              }}
+            >
+              {isLoggedIn ? "Logout" : "Login"}
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
