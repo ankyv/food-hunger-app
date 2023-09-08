@@ -45,7 +45,7 @@ const Body = () => {
 
   if (!isOnline) {
     return (
-      <div>
+      <div className="offline">
         <h2>Connection Error</h2>
         <p>Please check your internet connection and try again</p>
       </div>
@@ -81,10 +81,10 @@ const Body = () => {
         </div>
         <div className="restaurant-list">
           {filteredRestaurants.length === 0 ? (
-            <h4>
+            <p className="no-restaurant-text">
               Oops! We could not understand what you mean, try rephrasing the
               query
-            </h4>
+            </p>
           ) : (
             filteredRestaurants?.map((restaurant) => (
               <Link

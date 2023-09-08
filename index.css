@@ -180,6 +180,24 @@ body {
   overflow: hidden;
 }
 
+.restaurant-list .no-restaurant-text {
+  font-size: 1rem;
+  margin: 4rem auto;
+}
+
+.offline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1rem;
+  margin: 4rem auto;
+}
+
+.offline p {
+  margin-top: 0.6rem;
+}
+
 .shimmer-card {
   background-color: lightgray;
   border-radius: 12px;
