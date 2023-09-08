@@ -7,12 +7,12 @@
 }
 
 body {
+  color: #333;
   font-family: "Poppins", sans-serif;
   font-size: 62.5%;
 }
 
 .header {
-  /* border: 1px solid black; */
   box-shadow: 0px 1px 5px 0px rgb(198, 198, 198);
   background-color: #fff;
   height: 5rem;
@@ -36,7 +36,6 @@ body {
 }
 
 .header .nav-items {
-  /* border: 1px solid red; */
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -49,7 +48,7 @@ body {
 }
 
 .nav-items li a {
-  color: #000;
+  color: #333;
   text-decoration: none;
 }
 
@@ -58,18 +57,50 @@ body {
 }
 
 .main {
-  /* border: 1px solid black; */
-  margin: 8px 0;
-  padding: 40px;
+  padding: 2.2rem;
 }
 
-.search-container {
-  border: 1px solid black;
-  padding: 12px;
+.main .container {
+  margin: auto;
+  width: 90%;
+  max-width: 1200px;
 }
 
-.search-container > input {
-  margin-right: 8px;
+.main .container .search-container {
+  border: 1px solid #8a8a8a;
+  border-radius: 0.2rem;
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  margin: auto;
+}
+
+.main .container .search-container input {
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 90%;
+  height: 100%;
+  padding: 1rem;
+  margin-left: 2px;
+  outline: none;
+}
+
+.main .container .search-container .search-btn {
+  background-color: transparent;
+  color: #333;
+  border: none;
+  border-radius: 0rem 0.2rem 0.2rem 0rem;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 10%;
+}
+
+.main .container .search-container .search-btn:hover {
+  color: #f48c06;
+  /* background-color: #f48c06;
+  color: #fff;
+  font-weight: bold; */
 }
 
 .restaurant-list {

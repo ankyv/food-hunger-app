@@ -56,44 +56,46 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="main">
-      <div className="search-container">
-        <input
-          className="search-input"
-          type="text"
-          placeholder="Search"
-          value={searchText}
-          onChange={(e) => {
-            setSearchText(e.target.value);
-            const filteredData = filterData(allRestaurants, searchText);
-            setFilteredRestaurants(filteredData);
-          }}
-        />
-        <button
-          className="search-btn"
-          onClick={() => {
-            const filteredData = filterData(allRestaurants, searchText);
-            setFilteredRestaurants(filteredData);
-          }}
-        >
-          Search
-        </button>
-      </div>
-      <div className="restaurant-list">
-        {filteredRestaurants.length === 0 ? (
-          <h4>
-            Oops! We could not understand what you mean, try rephrasing the
-            query
-          </h4>
-        ) : (
-          filteredRestaurants?.map((restaurant) => (
-            <Link
-              key={restaurant?.info?.id}
-              to={"/restaurant/" + restaurant?.info?.id}
-            >
-              <RestaurantCard {...restaurant?.info} />
-            </Link>
-          ))
-        )}
+      <div className="container">
+        <div className="search-container">
+          <input
+            className="search-input"
+            type="text"
+            placeholder="Search for restaurants"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+              const filteredData = filterData(allRestaurants, searchText);
+              setFilteredRestaurants(filteredData);
+            }}
+          />
+          <button
+            className="search-btn"
+            onClick={() => {
+              const filteredData = filterData(allRestaurants, searchText);
+              setFilteredRestaurants(filteredData);
+            }}
+          >
+            Search
+          </button>
+        </div>
+        <div className="restaurant-list">
+          {filteredRestaurants.length === 0 ? (
+            <h4>
+              Oops! We could not understand what you mean, try rephrasing the
+              query
+            </h4>
+          ) : (
+            filteredRestaurants?.map((restaurant) => (
+              <Link
+                key={restaurant?.info?.id}
+                to={"/restaurant/" + restaurant?.info?.id}
+              >
+                <RestaurantCard {...restaurant?.info} />
+              </Link>
+            ))
+          )}
+        </div>
       </div>
     </div>
   );
