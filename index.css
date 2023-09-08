@@ -456,3 +456,139 @@ body {
   width: 120px;
   height: 100px;
 }
+
+.shimmer-menu {
+  padding: 2.2rem;
+}
+
+.shimmer-menu .container {
+  margin: auto;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.shimmer-menu .restaurant-details {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.shimmer-menu .restaurant-details .restaurant-image {
+  background-color: #e8e8e8;
+  border-radius: 1rem;
+  width: 270px;
+  height: 180px;
+  margin-left: 2rem;
+  margin-right: 1.2rem;
+}
+
+.shimmer-menu .restaurant-details .restaurant-info {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem 0;
+}
+
+.shimmer-menu .restaurant-details .restaurant-info .detail {
+  background-color: #e8e8e8;
+  border-radius: 4px;
+  height: 24px;
+  margin-bottom: 0.5rem;
+}
+
+.shimmer-menu .restaurant-details .restaurant-info .detail-1 {
+  width: 300px;
+}
+
+.shimmer-menu .restaurant-details .restaurant-info .detail-2 {
+  width: 160px;
+}
+
+.shimmer-menu .restaurant-details .restaurant-info .detail-3 {
+  width: 200px;
+}
+
+.shimmer-menu .restaurant-menu .category-container {
+  margin: 4rem 1rem;
+  padding: 1rem 0;
+}
+
+.shimmer-menu .restaurant-menu .category-container .category {
+  background-color: #e8e8e8;
+  border-radius: 4px;
+  width: 30%;
+  height: 24px;
+  padding-bottom: 1rem;
+  margin: auto;
+  margin-bottom: 0.5rem;
+}
+
+.shimmer-menu .restaurant-menu .category-container .menu-items {
+  padding-top: 2rem;
+}
+
+.shimmer-menu .restaurant-menu .category-container .menu-items .menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 1rem auto;
+  padding: 1rem;
+  padding-bottom: 2rem;
+}
+
+.shimmer-menu .restaurant-menu .category-container .menu-item .item-details {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem 1rem;
+}
+
+.shimmer-menu
+  .restaurant-menu
+  .category-container
+  .menu-item
+  .item-details
+  .detail {
+  background-color: #e8e8e8;
+  border-radius: 4px;
+  height: 24px;
+  margin-bottom: 0.5rem;
+}
+
+.shimmer-menu
+  .restaurant-menu
+  .category-container
+  .menu-item
+  .item-details
+  .detail-1 {
+  width: 300px;
+}
+
+.shimmer-menu
+  .restaurant-menu
+  .category-container
+  .menu-item
+  .item-details
+  .detail-2 {
+  width: 160px;
+}
+
+.shimmer-menu
+  .restaurant-menu
+  .category-container
+  .menu-item
+  .item-details
+  .detail-3 {
+  width: 200px;
+}
+
+.shimmer-menu
+  .restaurant-menu
+  .category-container
+  .menu-items
+  .menu-item
+  .item-image {
+  background-color: #e8e8e8;
+  border-radius: 0.4rem;
+  width: 120px;
+  height: 100px;
+}

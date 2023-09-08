@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import Shimmer from "./Shimmer";
+import ShimmerMenu from "./ShimmerMenu";
 import { IMG_CDN_URL } from "../constants";
 import useRestaurant from "../utils/useRestaurant";
 import { addItem } from "../utils/cartSlice";
@@ -22,7 +22,7 @@ const RestaurantMenu = () => {
   };
 
   return !restaurant ? (
-    <Shimmer />
+    <ShimmerMenu />
   ) : (
     <div className="restaurant-main">
       <div className="container">
