@@ -24,55 +24,67 @@ const RestaurantMenu = () => {
   return !restaurant ? (
     <Shimmer />
   ) : (
-    <div>
-      <div className="restaurant-details">
-        <div className="restaurant-image">
-          <img
-            className="restaurant-image"
-            src={IMG_CDN_URL + restaurantInfo?.cloudinaryImageId}
-          />
+    <div className="restaurant-main">
+      <div className="container">
+        <div className="restaurant-details">
+          <div className="restaurant-image">
+            <img src={IMG_CDN_URL + restaurantInfo?.cloudinaryImageId} />
+          </div>
+          <div className="restaurant-info">
+            <h2 className="title">{restaurantInfo?.name}</h2>
+            <h3 className="rating">
+              <span>&#10026;</span>
+              {restaurantInfo?.avgRating}
+            </h3>
+            <p className="cuisines">{restaurantInfo?.cuisines?.join(", ")}</p>
+            <p className="area">{restaurantInfo?.areaName}</p>
+            <p className="cost">{restaurantInfo?.costForTwoMessage}</p>
+          </div>
         </div>
-        <div className="restaurant-info">
-          <h2 className="restaurant-title">{restaurantInfo?.name}</h2>
-          <p>{restaurantInfo?.cuisines?.join(", ")}</p>
-          <h4>{restaurantInfo?.avgRating} stars</h4>
-          <h4>{restaurantInfo?.costForTwo}</h4>
-        </div>
-      </div>
-      <div className="restaurant-menu">
-        {restaurantMenu?.map((item) => {
-          return item?.card?.card?.itemCards ? (
-            <div key={item?.card?.card?.title} className="menu-category">
-              <h1>{item?.card?.card?.title}</h1>
-              <div className="menu-items">
-                {item?.card?.card?.itemCards?.map((foodItem) => {
-                  return (
-                    <div key={foodItem?.card?.info?.id} className="food-item">
-                      <div className="food-item-details">
-                        <h2>{foodItem?.card?.info?.name}</h2>
-                        <h4>Rs. {foodItem?.card?.info?.price / 100}</h4>
-                        <p>{foodItem?.card?.info?.description}</p>
+        <div className="restaurant-menu">
+          {restaurantMenu?.map((item) => {
+            return item?.card?.card?.itemCards ? (
+              <div key={item?.card?.card?.title} className="category-container">
+                <h2 className="category">
+                  {item?.card?.card?.title} (
+                  {item?.card?.card?.itemCards?.length})
+                </h2>
+                <div className="menu-items">
+                  {item?.card?.card?.itemCards?.map((foodItem) => {
+                    return (
+                      <div key={foodItem?.card?.info?.id} className="menu-item">
+                        <div className="item-details">
+                          <h2 className="title">
+                            {foodItem?.card?.info?.name}
+                          </h2>
+                          <h3 className="price">
+                            &#8377; {foodItem?.card?.info?.price / 100}
+                          </h3>
+                          <p className="description">
+                            {foodItem?.card?.info?.description}
+                          </p>
+                        </div>
+                        <div className="item-image">
+                          <img
+                            src={IMG_CDN_URL + foodItem?.card?.info?.imageId}
+                          />
+                          <button
+                            className="add-btn"
+                            onClick={() => {
+                              addFoodItem(foodItem?.card?.info);
+                            }}
+                          >
+                            Add
+                          </button>
+                        </div>
                       </div>
-                      <div className="food-item-image">
-                        <img
-                          src={IMG_CDN_URL + foodItem?.card?.info?.imageId}
-                        />
-                        <button
-                          className="add-btn"
-                          onClick={() => {
-                            addFoodItem(foodItem?.card?.info);
-                          }}
-                        >
-                          Add
-                        </button>
-                      </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          ) : null;
-        })}
+            ) : null;
+          })}
+        </div>
       </div>
     </div>
   );
