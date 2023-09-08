@@ -18,6 +18,7 @@ body {
   height: 5rem;
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
 .header .container {
@@ -104,27 +105,79 @@ body {
 }
 
 .restaurant-list {
-  border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 20px 0;
-  padding: 40px 100px;
+  margin-top: 2rem;
 }
 
-.restaurant-card {
-  border: 1px solid black;
-  border-radius: 12px;
-  /* height: 200px; */
-  width: 250px;
-  margin: 20px;
-  padding: 12px;
+.restaurant-list a {
+  border-radius: 1rem;
+  color: #333;
+  text-decoration: none;
+  margin: 1rem 0.8rem;
 }
 
-.restaurant-card > img {
-  border-radius: 12px;
+.restaurant-list a:hover {
+  transition: all 0.1s ease-in-out;
+  transform: scale(0.96);
+}
+
+.restaurant-list .restaurant-card {
+  border-radius: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 270px;
+}
+
+.restaurant-list .restaurant-card .restaurant-image {
+  border-radius: inherit;
   width: 100%;
+  height: 180px;
+}
+
+.restaurant-list .restaurant-card .restaurant-image img {
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+}
+
+.restaurant-list .restaurant-card .restaurant-details {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem 1rem;
+}
+
+.restaurant-list .restaurant-card .restaurant-details .title {
+  font-size: 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.restaurant-list .restaurant-card .restaurant-details .rating {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.restaurant-list .restaurant-card .restaurant-details .rating span {
+  font-size: 1.2rem;
+  padding-right: 0.2rem;
+}
+
+.restaurant-list .restaurant-card .restaurant-details .cuisines {
+  color: #656565;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.restaurant-list .restaurant-card .restaurant-details .area {
+  color: #656565;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .shimmer-card {
@@ -141,14 +194,14 @@ body {
   text-align: center;
 }
 
-.restaurant-details {
+/* .restaurant-details {
   border: 1px solid black;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin: 20px 0;
   padding: 12px 100px;
-}
+} */
 
 .restaurant-image {
   margin-right: 12px;
