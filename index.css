@@ -245,6 +245,7 @@ body {
 
 .shimmer .shimmer-list .shimmer-card .shimmer-details .detail {
   background-color: #e8e8e8;
+  border-radius: 4px;
   height: 24px;
   margin-bottom: 0.5rem;
 }
@@ -259,10 +260,6 @@ body {
 
 .shimmer .shimmer-list .shimmer-card .shimmer-details .detail-3 {
   width: 90%;
-}
-
-.shimmer .shimmer-list .shimmer-card .shimmer-details .detail-4 {
-  width: 60%;
 }
 
 .footer {

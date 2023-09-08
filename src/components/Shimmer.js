@@ -13,7 +13,6 @@ const Shimmer = () => {
                   <div className="detail detail-1"></div>
                   <div className="detail detail-2"></div>
                   <div className="detail detail-3"></div>
-                  <div className="detail detail-4"></div>
                 </div>
               </div>
             ))}
