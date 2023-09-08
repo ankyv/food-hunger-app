@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <div className="footer">
-      <p>&copy; 2023 FoodHunger. All Rights Reserved</p>
+      <p>Developed with &#10084; by Ankit Varshney</p>
     </div>
   );
 };
