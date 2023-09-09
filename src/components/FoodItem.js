@@ -38,15 +38,17 @@ const FoodItem = ({
       <div className="food-image">
         <img src={IMG_CDN_URL + imageId} />
       </div>
-      <div className="food-details">
-        <h2>{name}</h2>
-        <h4>Rs. {price / 100}</h4>
-        <h3>Total Price: {totalPrice / 100}</h3>
+      <div className="food-info">
+        <h2 className="title">{name}</h2>
+        <p>Rs. {price / 100}</p>
       </div>
       <div className="food-quantity">
         <button onClick={() => handleDecreaseItem()}>-</button>
         <p>{count}</p>
-        <button onClick={() => handleIncreaseItem()}>+</button>
+        <button onClick={() => handleIncreaseItem()}>&#43;</button>
+      </div>
+      <div className="food-price">
+        <p>Total Price : {totalPrice / 100}</p>
       </div>
     </div>
   );
