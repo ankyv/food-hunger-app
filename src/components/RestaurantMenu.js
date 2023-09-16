@@ -12,8 +12,15 @@ const RestaurantMenu = () => {
 
   const restaurantInfo = restaurant?.cards[0]?.card?.card?.info;
 
-  const restaurantMenu =
-    restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+  let restaurantMenu;
+
+  for (let i = 0; i < restaurant?.cards?.length; i++) {
+    if (restaurant?.cards[i]?.groupedCard) {
+      restaurantMenu =
+        restaurant?.cards[i]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+      break;
+    }
+  }
 
   const dispatch = useDispatch();
 
