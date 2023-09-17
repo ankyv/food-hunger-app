@@ -216,19 +216,20 @@ body {
 
 .shimmer {
   padding: 2.2rem;
-  min-height: 85vh;
+  min-height: 83vh;
 }
 
 .shimmer .container {
   margin: auto;
   width: 90%;
-  max-width: 1200px;
+  max-width: 2600px;
 }
 
 .shimmer .container .search-container {
-  border-radius: 0.2rem;
+  border-radius: 0.4rem;
   background-color: #e8e8e8;
   width: 70%;
+  max-width: 700px;
   height: 50px;
   margin: auto;
 }
@@ -242,8 +243,8 @@ body {
 }
 
 .shimmer .shimmer-list .shimmer-card {
-  border-radius: 1rem;
-  width: 270px;
+  border-radius: 1.6rem;
+  width: 18vw;
   margin: 1rem 0.8rem;
 }
 
@@ -251,7 +252,7 @@ body {
   background-color: #e8e8e8;
   border-radius: inherit;
   width: 100%;
-  height: 180px;
+  height: 12vw;
 }
 
 .shimmer .shimmer-list .shimmer-card .shimmer-details {
@@ -479,19 +480,21 @@ body {
 
 .shimmer-menu {
   padding: 2.2rem;
-  min-height: 85vh;
+  min-height: 83vh;
 }
 
 .shimmer-menu .container {
   margin: auto;
   width: 90%;
-  max-width: 1200px;
+  max-width: 2600px;
 }
 
 .shimmer-menu .restaurant-details {
   display: flex;
   align-items: center;
+  max-width: 1000px;
   padding: 1rem;
+  margin: auto;
 }
 
 .shimmer-menu .restaurant-details .restaurant-image {
@@ -500,13 +503,13 @@ body {
   width: 270px;
   height: 180px;
   margin-left: 2rem;
-  margin-right: 1.2rem;
+  margin-right: 2rem;
 }
 
 .shimmer-menu .restaurant-details .restaurant-info {
   display: flex;
   flex-direction: column;
-  padding: 0.8rem 0;
+  /* padding: 0.8rem 0; */
 }
 
 .shimmer-menu .restaurant-details .restaurant-info .detail {
@@ -817,6 +820,20 @@ body {
     height: 180px;
   }
 
+  .shimmer .container {
+    width: 100%;
+  }
+
+  .shimmer .shimmer-list .shimmer-card {
+    /* width: 24vw; */
+    width: 240px;
+  }
+
+  .shimmer .shimmer-list .shimmer-card .shimmer-image {
+    /* height: 18vw; */
+    height: 180px;
+  }
+
   .cart .container {
     width: 100%;
   }
@@ -837,6 +854,16 @@ body {
   }
 
   .main .restaurant-list .restaurant-card .restaurant-image {
+    /* height: 22vw; */
+    height: 180px;
+  }
+
+  .shimmer .shimmer-list .shimmer-card {
+    /* width: 32vw; */
+    width: 260px;
+  }
+
+  .shimmer .shimmer-list .shimmer-card .shimmer-image {
     /* height: 22vw; */
     height: 180px;
   }
@@ -868,6 +895,11 @@ body {
     width: 200px;
     height: 130px;
   }
+
+  .shimmer-menu .restaurant-details .restaurant-image {
+    width: 200px;
+    height: 130px;
+  }
 }
 
 @media (max-width: 620px) {
@@ -884,7 +916,21 @@ body {
     height: 130px;
   }
 
+  .shimmer .shimmer-list .shimmer-card {
+    /* width: 32vw; */
+    width: 200px;
+  }
+
+  .shimmer .shimmer-list .shimmer-card .shimmer-image {
+    /* height: 22vw; */
+    height: 130px;
+  }
+
   .restaurant-main .restaurant-menu .category-container .menu-items .menu-item {
+    width: 100%;
+  }
+
+  .shimmer-menu .restaurant-menu .category-container .menu-items .menu-item {
     width: 100%;
   }
 }
@@ -906,6 +952,16 @@ body {
     .menu-item
     .item-image
     img {
+    width: 100px;
+    height: 80px;
+  }
+
+  .shimmer-menu
+    .restaurant-menu
+    .category-container
+    .menu-items
+    .menu-item
+    .item-image {
     width: 100px;
     height: 80px;
   }
@@ -964,11 +1020,54 @@ body {
     width: 75%;
   }
 
+  .shimmer .container {
+    width: 100%;
+  }
+
+  .shimmer .container .search-container {
+    width: 100%;
+  }
+
+  .shimmer .shimmer-list {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .shimmer .shimmer-list .shimmer-card {
+    display: flex;
+    margin: 2rem auto;
+    width: 100%;
+  }
+
+  .shimmer .shimmer-list .shimmer-card {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .shimmer .shimmer-list .shimmer-card .shimmer-image {
+    width: 20vw;
+    height: 20vw;
+  }
+
+  .shimmer .shimmer-list .shimmer-card .shimmer-details {
+    width: 75%;
+  }
+
   .restaurant-main .container {
     width: 100%;
   }
 
   .restaurant-main .restaurant-details .restaurant-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .shimmer-menu .container {
+    width: 100%;
+  }
+
+  .shimmer-menu .restaurant-details .restaurant-image {
     width: 100px;
     height: 100px;
   }
