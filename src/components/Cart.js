@@ -60,7 +60,7 @@ const Cart = () => {
             <div className="bill-details">
               <div className="bill-detail">
                 <p>Item Total</p>
-                <p>&#8377; {cartTotal / 100}</p>
+                <p>&#8377; {(cartTotal / 100).toFixed(2)}</p>
               </div>
               <div className="bill-detail">
                 <p>Delivery Fee</p>
@@ -73,7 +73,7 @@ const Cart = () => {
             </div>
             <div className="total">
               <p>To Pay</p>
-              <p>&#8377; {cartTotal / 100 + 150}</p>
+              <p>&#8377; {(cartTotal / 100 + 150).toFixed(2)}</p>
             </div>
           </div>
         )}

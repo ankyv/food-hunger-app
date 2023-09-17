@@ -40,7 +40,7 @@ const FoodItem = ({
       </div>
       <div className="food-info">
         <h2 className="title">{name}</h2>
-        <p>Rs. {price / 100}</p>
+        <p>Rs. {(price / 100).toFixed(2)}</p>
       </div>
       <div className="food-quantity">
         <button onClick={() => handleDecreaseItem()}>-</button>
@@ -48,7 +48,7 @@ const FoodItem = ({
         <button onClick={() => handleIncreaseItem()}>&#43;</button>
       </div>
       <div className="food-price">
-        <p>Total Price : {totalPrice / 100}</p>
+        <p>Total Price : {(totalPrice / 100).toFixed(2)}</p>
       </div>
     </div>
   );
