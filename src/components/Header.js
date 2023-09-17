@@ -10,10 +10,10 @@ const Header = () => {
   return (
     <div className="header">
       <div className="container">
-        <div>
+        <div className="title-container">
           <h1 className="title">Food Hunger</h1>
         </div>
-        <div>
+        <div className="navbar">
           <ul className="nav-items">
             <li>
               <Link to="/">Home</Link>
@@ -25,7 +25,7 @@ const Header = () => {
               <Link to="/contact">Contact</Link>
             </li>
             <li>
-              <Link to="/cart">Cart - {cartItems.length}</Link>
+              <Link to="/cart">Cart</Link>
             </li>
             <li
               onClick={() => {
