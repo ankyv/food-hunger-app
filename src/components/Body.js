@@ -1,51 +1,23 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
-import { API_DESKTOP_URL, API_MOBILE_URL } from "../constants";
 import useOnline from "../utils/useOnline";
+import useRestaurantList from "../utils/useRestaurantList";
 
 const Body = () => {
-  const [allRestaurants, setAllRestaurants] = useState(null);
-
-  const [filteredRestaurants, setFilteredRestaurants] =
-    useState(allRestaurants);
-
-  const [searchText, setSearchText] = useState("");
-
+  const restaurantList = useRestaurantList();
   const isOnline = useOnline();
 
+  const [allRestaurants, setAllRestaurants] = useState(null);
+  const [filteredRestaurants, setFilteredRestaurants] = useState(null);
+  const [searchText, setSearchText] = useState("");
+
   useEffect(() => {
-    if (window.screen.width < 1000) {
-      getRestaurants(API_MOBILE_URL);
-    } else {
-      getRestaurants(API_DESKTOP_URL);
-    }
-  }, []);
-
-  async function getRestaurants(API_TO_CALL) {
-    const response = await fetch(API_TO_CALL);
-    const json = await response.json();
-    // console.log(
-    //   json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    // );
-
-    let restaurantData;
-
-    for (let i = 0; i < json?.data?.cards.length; i++) {
-      restaurantData =
-        json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants;
-
-      if (restaurantData !== undefined) {
-        break;
-      }
-    }
-
-    setAllRestaurants(restaurantData);
-    setFilteredRestaurants(restaurantData);
-  }
+    setAllRestaurants(restaurantList);
+    setFilteredRestaurants(restaurantList);
+  }, [restaurantList]);
 
   if (!isOnline) {
     return (
