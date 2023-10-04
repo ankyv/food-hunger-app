@@ -8,7 +8,7 @@ import useRestaurantList from "../utils/useRestaurantList";
 import SearchContainer from "./SearchContainer";
 import NoRestaurant from "./NoRestaurant";
 
-const Body = () => {
+const RestaurantListPage = () => {
   const restaurantList = useRestaurantList();
   const isOnline = useOnline();
 
@@ -27,10 +27,11 @@ const Body = () => {
   if (!isOnline) {
     return <Offline />;
   }
+  if (!allRestaurants) {
+    return <Shimmer />;
+  }
 
-  return !allRestaurants ? (
-    <Shimmer />
-  ) : (
+  return (
     <div className="main">
       <div className="container">
         <SearchContainer
@@ -58,4 +59,4 @@ const Body = () => {
   );
 };
 
-export default Body;
+export default RestaurantListPage;
