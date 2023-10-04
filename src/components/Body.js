@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import useRestaurantList from "../utils/useRestaurantList";
 import SearchContainer from "./SearchContainer";
+import NoRestaurant from "./NoRestaurant";
 
 const Body = () => {
   const restaurantList = useRestaurantList();
@@ -40,10 +41,7 @@ const Body = () => {
         />
         <div className="restaurant-list">
           {filteredRestaurants.length === 0 ? (
-            <p className="no-restaurant-text">
-              Oops! We could not understand what you mean, try rephrasing the
-              query
-            </p>
+            <NoRestaurant />
           ) : (
             filteredRestaurants?.map((restaurant) => (
               <Link
