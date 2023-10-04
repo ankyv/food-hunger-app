@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import Offline from "./Offline";
 import { Link } from "react-router-dom";
-import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
 import useRestaurantList from "../utils/useRestaurantList";
+import SearchContainer from "./SearchContainer";
 
 const Body = () => {
   const restaurantList = useRestaurantList();
@@ -12,20 +13,18 @@ const Body = () => {
 
   const [allRestaurants, setAllRestaurants] = useState(null);
   const [filteredRestaurants, setFilteredRestaurants] = useState(null);
-  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     setAllRestaurants(restaurantList);
     setFilteredRestaurants(restaurantList);
   }, [restaurantList]);
 
+  function handleFilteredRestaurants(filteredRestaurants) {
+    setFilteredRestaurants(filteredRestaurants);
+  }
+
   if (!isOnline) {
-    return (
-      <div className="offline">
-        <h2>Connection Error</h2>
-        <p>Please check your internet connection and try again</p>
-      </div>
-    );
+    return <Offline />;
   }
 
   return !allRestaurants ? (
@@ -33,28 +32,12 @@ const Body = () => {
   ) : (
     <div className="main">
       <div className="container">
-        <div className="search-container">
-          <input
-            className="search-input"
-            type="text"
-            placeholder="Search for restaurants"
-            value={searchText}
-            onChange={(e) => {
-              setSearchText(e.target.value);
-              const filteredData = filterData(allRestaurants, searchText);
-              setFilteredRestaurants(filteredData);
-            }}
-          />
-          <button
-            className="search-btn"
-            onClick={() => {
-              const filteredData = filterData(allRestaurants, searchText);
-              setFilteredRestaurants(filteredData);
-            }}
-          >
-            Search
-          </button>
-        </div>
+        <SearchContainer
+          allRestaurants={allRestaurants}
+          handleFilteredRestaurants={(filteredRestaurants) => {
+            handleFilteredRestaurants(filteredRestaurants);
+          }}
+        />
         <div className="restaurant-list">
           {filteredRestaurants.length === 0 ? (
             <p className="no-restaurant-text">
