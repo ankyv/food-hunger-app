@@ -10,9 +10,11 @@ const Header = () => {
   return (
     <div className="header">
       <div className="container">
-        <div className="title-container">
-          <h1 className="title">Food Hunger</h1>
-        </div>
+        <Link to={"/"}>
+          <div className="title-container">
+            <h1 className="title">Food Hunger</h1>
+          </div>
+        </Link>
         <div className="navbar">
           <ul className="nav-items">
             <li>

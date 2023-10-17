@@ -28,6 +28,9 @@ const RestaurantMenu = () => {
     dispatch(addItem(item));
   };
 
+  // This scrolls to the top of the page on load
+  window.scrollTo(0, 0);
+
   return !restaurant ? (
     <ShimmerMenu />
   ) : (
@@ -53,8 +56,8 @@ const RestaurantMenu = () => {
             return item?.card?.card?.itemCards ? (
               <div key={item?.card?.card?.title} className="category-container">
                 <h2 className="category">
-                  {item?.card?.card?.title} (
-                  {item?.card?.card?.itemCards?.length})
+                  {item?.card?.card?.title}
+                  <span>{item?.card?.card?.itemCards?.length}</span>
                 </h2>
                 <div className="menu-items">
                   {item?.card?.card?.itemCards?.map((foodItem) => {
