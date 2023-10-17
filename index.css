@@ -67,7 +67,7 @@ body {
 
 .main {
   padding: 2.2rem;
-  min-height: 83vh;
+  min-height: calc(100vh - 120px);
 }
 
 .main .container {
@@ -89,8 +89,9 @@ body {
 
 .main .container .search-container input {
   border: none;
+  font-family: "Poppins", sans-serif;
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 400;
   width: 80%;
   height: 100%;
   padding: 1rem;
@@ -103,6 +104,7 @@ body {
   color: #333;
   border: none;
   border-radius: 0rem 0.4rem 0.4rem 0rem;
+  font-family: "Poppins", sans-serif;
   font-size: 1.6rem;
   cursor: pointer;
   padding: 1rem;
@@ -110,9 +112,6 @@ body {
 
 .main .container .search-container .search-btn:hover {
   color: #f48c06;
-  /* background-color: #f48c06;
-  color: #fff;
-  font-weight: bold; */
 }
 
 .main .restaurant-list {
@@ -451,6 +450,7 @@ body {
   border-radius: 4px;
   color: #333;
   cursor: pointer;
+  font-family: "Poppins", sans-serif;
   font-size: 1.6rem;
   padding: 0.4rem 1.6rem;
   margin: -1rem;
@@ -619,7 +619,7 @@ body {
 
 .cart {
   padding: 2.2rem;
-  min-height: 83vh;
+  min-height: calc(100vh - 120px);
 }
 
 .cart .container {
@@ -654,6 +654,7 @@ body {
   border-radius: 4px;
   color: #333;
   cursor: pointer;
+  font-family: "Poppins", sans-serif;
   font-size: 1.6rem;
   padding: 0.4rem 1.6rem;
 }
@@ -769,7 +770,8 @@ body {
 
 .about {
   padding: 2.2rem;
-  min-height: 83vh;
+  padding-top: 4rem;
+  min-height: calc(100vh - 120px);
 }
 
 .about .container {
@@ -779,9 +781,14 @@ body {
   max-width: 1200px;
 }
 
+.about .container h1 {
+  margin-bottom: 1rem;
+}
+
 .contact {
   padding: 2.2rem;
-  min-height: 83vh;
+  min-height: calc(100vh - 120px);
+  padding-top: 4rem;
 }
 
 .contact .container {
@@ -789,6 +796,76 @@ body {
   margin: auto;
   width: 90%;
   max-width: 1200px;
+}
+
+.contact .container form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-top: 2rem;
+}
+
+.contact .container form input {
+  border: none;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 2rem;
+  padding: 0.8rem 2rem;
+  padding-left: 0;
+  outline: none;
+}
+
+.contact .container form input:focus {
+  border-bottom: 1px solid #8a8a8a;
+}
+
+.contact .container form textarea {
+  border: none;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 2rem;
+  padding: 0.8rem 2rem;
+  padding-left: 0;
+  outline: none;
+}
+
+.contact .container form textarea:focus {
+  border-bottom: 1px solid #8a8a8a;
+}
+
+.contact .container form .submit-btn {
+  background-color: #f48c06;
+  border: none;
+  color: #fff;
+  align-self: flex-start;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.contact .container form .submit-btn:hover {
+  background-color: #ff6d00;
+}
+
+.contact .container .submit-response {
+  margin-top: 4rem;
+}
+
+.contact .container .submit-response h2 {
+  margin-bottom: 0.6rem;
+}
+
+.contact .container .submit-response .send-msg {
+  background-color: transparent;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+
+.contact .container .submit-response .send-msg:hover {
+  color: #f48c06;
 }
 
 @media (max-width: 1200px) {
