@@ -11,6 +11,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { Provider } from "react-redux";
 import store from "./utils/store";
 import Cart from "./components/Cart";
+import Body from "./components/Body";
 
 const AppLayout = () => {
   return (
@@ -30,23 +31,29 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <RestaurantListPage />,
-      },
-      {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
-      },
-      {
-        path: "/cart",
-        element: <Cart />,
-      },
-      {
-        path: "/restaurant/:resId",
-        element: <RestaurantMenu />,
+        element: <Body />,
+        children: [
+          {
+            path: "/",
+            element: <RestaurantListPage />,
+          },
+          {
+            path: "/about",
+            element: <About />,
+          },
+          {
+            path: "/contact",
+            element: <Contact />,
+          },
+          {
+            path: "/cart",
+            element: <Cart />,
+          },
+          {
+            path: "/restaurant/:resId",
+            element: <RestaurantMenu />,
+          },
+        ],
       },
     ],
   },

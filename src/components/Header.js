@@ -1,11 +1,12 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { toggleMenu } from "../utils/menuSlice";
 
 const Header = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
   const cartItems = useSelector((store) => store.cart.items);
+
+  const dispatch = useDispatch();
 
   return (
     <div className="header">
@@ -17,24 +18,19 @@ const Header = () => {
         </Link>
         <div className="navbar">
           <ul className="nav-items">
-            <li>
+            <li className="home-nav-item">
               <Link to="/">Home</Link>
             </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-            <li>
+            <li className="cart-nav-item">
               <Link to="/cart">Cart</Link>
             </li>
             <li
               onClick={() => {
-                setIsLoggedIn(!isLoggedIn);
+                dispatch(toggleMenu());
               }}
+              className="menu-nav-item"
             >
-              {isLoggedIn ? "Logout" : "Login"}
+              Menu
             </li>
           </ul>
         </div>
