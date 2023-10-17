@@ -6,23 +6,46 @@
   padding: 0;
 }
 
+.light {
+  --text-clr: #333;
+  --bg-clr: #fff;
+  --primary-light-clr: #f48c06;
+  --primary-dark-clr: #ff6d00;
+  --border-clr: #d0d0d0;
+  --text-light-clr: #606060;
+  --shimmer-bg-clr: #e8e8e8;
+  --footer-bg-clr: #333;
+}
+
+.dark {
+  --text-clr: #fff;
+  --bg-clr: #101426;
+  --primary-light-clr: #f48c06;
+  --primary-dark-clr: #ff6d00;
+  --border-clr: rgb(48, 48, 48);
+  --text-light-clr: #aaaaaa;
+  --shimmer-bg-clr: rgb(55, 55, 55);
+  --footer-bg-clr: #171b2a;
+}
+
 html {
   font-size: 62.5%;
 }
 
 body {
-  color: #333;
+  color: var(--text-clr);
   font-family: "Poppins", sans-serif;
 }
 
 a {
-  color: #333;
+  color: var(--text-clr);
   text-decoration: none;
 }
 
 .header {
-  box-shadow: 0px 1px 5px 0px rgb(198, 198, 198);
-  background-color: #fff;
+  /* box-shadow: 0px 1px 5px 0px rgb(198, 198, 198); */
+  box-shadow: 0px 1px 5px 0px var(--border-clr);
+  background-color: var(--bg-clr);
   height: 80px;
   position: sticky;
   top: 0;
@@ -45,7 +68,7 @@ a {
 }
 
 .header .title-container:hover .title {
-  color: #f48c06;
+  color: var(--primary-light-clr);
 }
 
 .header .title {
@@ -66,15 +89,16 @@ a {
 }
 
 .nav-items li a {
-  color: #333;
+  color: var(--text-clr);
   text-decoration: none;
 }
 
 .nav-items li a:hover {
-  color: #ff6d00;
+  color: var(--primary-dark-clr);
 }
 
 .main {
+  background-color: var(--bg-clr);
   padding: 2.2rem;
   min-height: calc(100vh - 120px);
 }
@@ -86,7 +110,8 @@ a {
 }
 
 .main .container .search-container {
-  border: 1px solid #8a8a8a;
+  background-color: var(--bg-clr);
+  border: 1px solid var(--border-clr);
   border-radius: 0.4rem;
   display: flex;
   justify-content: space-between;
@@ -97,7 +122,9 @@ a {
 }
 
 .main .container .search-container input {
+  background-color: var(--bg-clr);
   border: none;
+  color: var(--text-clr);
   font-family: "Poppins", sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
@@ -110,7 +137,7 @@ a {
 
 .main .container .search-container .search-btn {
   background-color: transparent;
-  color: #333;
+  color: var(--text-clr);
   border: none;
   border-radius: 0rem 0.4rem 0.4rem 0rem;
   font-family: "Poppins", sans-serif;
@@ -120,7 +147,7 @@ a {
 }
 
 .main .container .search-container .search-btn:hover {
-  color: #f48c06;
+  color: var(--primary-light-clr);
 }
 
 .main .restaurant-list {
@@ -133,7 +160,7 @@ a {
 
 .main .restaurant-list a {
   border-radius: 1.6rem;
-  color: #333;
+  color: var(--text-clr);
   text-decoration: none;
   margin: 1rem 0.8rem;
   width: 18vw;
@@ -188,14 +215,14 @@ a {
 }
 
 .main .restaurant-list .restaurant-card .restaurant-details .cuisines {
-  color: #656565;
+  color: var(--text-light-clr);
   font-size: 1.6rem;
   white-space: nowrap;
   overflow: hidden;
 }
 
 .main .restaurant-list .restaurant-card .restaurant-details .area {
-  color: #656565;
+  color: var(--text-light-clr);
   font-size: 1.6rem;
   white-space: nowrap;
   overflow: hidden;
@@ -208,6 +235,7 @@ a {
 }
 
 .offline {
+  background-color: var(--bg-clr);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -223,6 +251,7 @@ a {
 }
 
 .shimmer {
+  background-color: var(--bg-clr);
   padding: 2.2rem;
   min-height: calc(100vh - 120px);
 }
@@ -235,7 +264,7 @@ a {
 
 .shimmer .container .search-container {
   border-radius: 0.4rem;
-  background-color: #e8e8e8;
+  background-color: var(--shimmer-bg-clr);
   width: 70%;
   max-width: 700px;
   height: 50px;
@@ -257,7 +286,7 @@ a {
 }
 
 .shimmer .shimmer-list .shimmer-card .shimmer-image {
-  background-color: #e8e8e8;
+  background-color: var(--shimmer-bg-clr);
   border-radius: inherit;
   width: 100%;
   height: 12vw;
@@ -270,7 +299,7 @@ a {
 }
 
 .shimmer .shimmer-list .shimmer-card .shimmer-details .detail {
-  background-color: #e8e8e8;
+  background-color: var(--shimmer-bg-clr);
   border-radius: 4px;
   height: 24px;
   margin-bottom: 0.5rem;
@@ -289,7 +318,8 @@ a {
 }
 
 .footer {
-  background-color: #333;
+  background-color: var(--footer-bg-clr);
+  border-top: 1px solid var(--border-clr);
   color: #fff;
   display: flex;
   justify-content: center;
@@ -302,6 +332,7 @@ a {
 }
 
 .restaurant-main {
+  background-color: var(--bg-clr);
   padding: 2.2rem;
   min-height: calc(100vh - 120px);
 }
@@ -356,17 +387,17 @@ a {
 }
 
 .restaurant-main .restaurant-details .restaurant-info .cuisines {
-  color: #656565;
+  color: var(--text-light-clr);
   font-size: 1.6rem;
 }
 
 .restaurant-main .restaurant-details .restaurant-info .area {
-  color: #656565;
+  color: var(--text-light-clr);
   font-size: 1.6rem;
 }
 
 .restaurant-main .restaurant-details .restaurant-info .cost {
-  color: #656565;
+  color: var(--text-light-clr);
   font-size: 1.6rem;
   font-weight: 700;
 }
@@ -377,7 +408,7 @@ a {
 }
 
 .restaurant-main .restaurant-menu .category-container .category {
-  border-bottom: 1px solid #d0d0d0;
+  border-bottom: 1px solid var(--border-clr);
   display: flex;
   align-items: center;
   font-size: 2.2rem;
@@ -389,7 +420,7 @@ a {
 }
 
 .restaurant-main .restaurant-menu .category-container .category span {
-  background-color: #e8e8e8;
+  background-color: var(--shimmer-bg-clr);
   border-radius: 10rem;
   font-size: 1.8rem;
   font-weight: 400;
@@ -402,7 +433,7 @@ a {
 }
 
 .restaurant-main .restaurant-menu .category-container .menu-items .menu-item {
-  border-bottom: 1px solid #d0d0d0;
+  border-bottom: 1px solid var(--border-clr);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -442,7 +473,7 @@ a {
   .menu-item
   .item-details
   .description {
-  color: #656565;
+  color: var(--text-light-clr);
   font-size: 1.6rem;
   margin-top: 0.6rem;
 }
@@ -483,7 +514,7 @@ a {
   .menu-item
   .item-image
   .add-btn:hover {
-  color: #ff6d00;
+  color: var(--primary-dark-clr);
 }
 
 .restaurant-main
@@ -499,6 +530,7 @@ a {
 }
 
 .shimmer-menu {
+  background-color: var(--bg-clr);
   padding: 2.2rem;
   min-height: calc(100vh - 120px);
 }
@@ -518,7 +550,7 @@ a {
 }
 
 .shimmer-menu .restaurant-details .restaurant-image {
-  background-color: #e8e8e8;
+  background-color: var(--shimmer-bg-clr);
   border-radius: 1rem;
   width: 270px;
   height: 180px;
@@ -529,11 +561,10 @@ a {
 .shimmer-menu .restaurant-details .restaurant-info {
   display: flex;
   flex-direction: column;
-  /* padding: 0.8rem 0; */
 }
 
 .shimmer-menu .restaurant-details .restaurant-info .detail {
-  background-color: #e8e8e8;
+  background-color: var(--shimmer-bg-clr);
   border-radius: 4px;
   height: 24px;
   margin-bottom: 0.5rem;
@@ -557,7 +588,7 @@ a {
 }
 
 .shimmer-menu .restaurant-menu .category-container .category {
-  background-color: #e8e8e8;
+  background-color: var(--shimmer-bg-clr);
   border-radius: 4px;
   width: 30%;
   height: 24px;
@@ -592,7 +623,7 @@ a {
   .menu-item
   .item-details
   .detail {
-  background-color: #e8e8e8;
+  background-color: var(--shimmer-bg-clr);
   border-radius: 4px;
   height: 24px;
   margin-bottom: 0.5rem;
@@ -631,14 +662,14 @@ a {
   .menu-items
   .menu-item
   .item-image {
-  background-color: #e8e8e8;
+  background-color: var(--shimmer-bg-clr);
   border-radius: 0.4rem;
   width: 120px;
   height: 100px;
 }
 
 .cart {
-  background-color: #e8e8e8;
+  background-color: var(--footer-bg-clr);
   padding: 2.2rem;
   min-height: calc(100vh - 120px);
 }
@@ -653,7 +684,7 @@ a {
 }
 
 .cart .container .cart-container {
-  background-color: #fff;
+  background-color: var(--bg-clr);
   width: 70%;
   max-width: 1000px;
   padding: 1rem;
@@ -672,10 +703,10 @@ a {
 }
 
 .cart .cart-container .cart-details .cart-buttons .clear-cart-btn {
-  background-color: #fff;
-  border: 1px solid #8a8a8a;
+  background-color: var(--bg-clr);
+  border: 1px solid var(--border-clr);
   border-radius: 4px;
-  color: #333;
+  color: var(--text-clr);
   cursor: pointer;
   font-family: "Poppins", sans-serif;
   font-size: 1.6rem;
@@ -683,7 +714,7 @@ a {
 }
 
 .cart .cart-container .cart-details .cart-buttons .clear-cart-btn:hover {
-  color: #ff6d00;
+  color: var(--primary-dark-clr);
 }
 
 .cart .cart-container .cart-details .cart-info h2 {
@@ -727,7 +758,7 @@ a {
 }
 
 .cart .cart-container .cart-items .food-item .food-quantity {
-  border: 1px solid #8a8a8a;
+  border: 1px solid var(--border-clr);
   display: flex;
   justify-content: space-between;
   font-size: 1.6rem;
@@ -738,7 +769,7 @@ a {
 .cart .cart-container .cart-items .food-item .food-quantity button {
   background-color: transparent;
   border: none;
-  color: #333;
+  color: var(--text-clr);
   cursor: pointer;
   font-size: 2rem;
   font-weight: normal;
@@ -751,7 +782,7 @@ a {
 }
 
 .cart .container .checkout {
-  background-color: #fff;
+  background-color: var(--bg-clr);
   width: 30%;
   max-width: 400px;
   padding: 1rem;
@@ -765,7 +796,7 @@ a {
 }
 
 .cart .checkout .bill-details {
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--text-clr);
   font-size: 1.6rem;
   padding: 1rem 0;
 }
@@ -793,6 +824,7 @@ a {
 }
 
 .about {
+  background-color: var(--bg-clr);
   padding: 2.2rem;
   padding-top: 4rem;
   min-height: calc(100vh - 120px);
@@ -810,6 +842,7 @@ a {
 }
 
 .contact {
+  background-color: var(--bg-clr);
   padding: 2.2rem;
   min-height: calc(100vh - 120px);
   padding-top: 4rem;
@@ -830,7 +863,9 @@ a {
 }
 
 .contact .container form input {
+  background-color: var(--bg-clr);
   border: none;
+  color: var(--text-clr);
   font-family: "Poppins", sans-serif;
   margin-bottom: 2rem;
   padding: 0.8rem 2rem;
@@ -839,11 +874,13 @@ a {
 }
 
 .contact .container form input:focus {
-  border-bottom: 1px solid #8a8a8a;
+  border-bottom: 1px solid var(--border-clr);
 }
 
 .contact .container form textarea {
+  background-color: var(--bg-clr);
   border: none;
+  color: var(--text-clr);
   font-family: "Poppins", sans-serif;
   margin-bottom: 2rem;
   padding: 0.8rem 2rem;
@@ -852,13 +889,13 @@ a {
 }
 
 .contact .container form textarea:focus {
-  border-bottom: 1px solid #8a8a8a;
+  border-bottom: 1px solid var(--border-clr);
 }
 
 .contact .container form .submit-btn {
-  background-color: #f48c06;
+  background-color: var(--primary-light-clr);
   border: none;
-  color: #fff;
+  color: var(--bg-clr);
   align-self: flex-start;
   font-family: "Poppins", sans-serif;
   font-size: 1.6rem;
@@ -868,7 +905,7 @@ a {
 }
 
 .contact .container form .submit-btn:hover {
-  background-color: #ff6d00;
+  background-color: var(--primary-dark-clr);
 }
 
 .contact .container .submit-response {
@@ -882,6 +919,7 @@ a {
 .contact .container .submit-response .send-msg {
   background-color: transparent;
   border: none;
+  color: var(--text-clr);
   font-family: "Poppins", sans-serif;
   font-size: 1.4rem;
   margin-top: 3rem;
@@ -889,7 +927,7 @@ a {
 }
 
 .contact .container .submit-response .send-msg:hover {
-  color: #f48c06;
+  color: var(--primary-light-clr);
 }
 
 @media (max-width: 1200px) {
