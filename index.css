@@ -203,7 +203,7 @@ body {
   align-items: center;
   flex-direction: column;
   font-size: 1.6rem;
-  min-height: 85vh;
+  min-height: calc(100vh - 120px);
   padding-top: 4rem;
   margin: auto;
 }
@@ -215,7 +215,7 @@ body {
 
 .shimmer {
   padding: 2.2rem;
-  min-height: 83vh;
+  min-height: calc(100vh - 120px);
 }
 
 .shimmer .container {
@@ -294,7 +294,7 @@ body {
 
 .restaurant-main {
   padding: 2.2rem;
-  min-height: 83vh;
+  min-height: calc(100vh - 120px);
 }
 
 .restaurant-main .container {
@@ -480,7 +480,7 @@ body {
 
 .shimmer-menu {
   padding: 2.2rem;
-  min-height: 83vh;
+  min-height: calc(100vh - 120px);
 }
 
 .shimmer-menu .container {
