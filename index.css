@@ -618,6 +618,7 @@ body {
 }
 
 .cart {
+  background-color: #e8e8e8;
   padding: 2.2rem;
   min-height: calc(100vh - 120px);
 }
@@ -632,9 +633,11 @@ body {
 }
 
 .cart .container .cart-container {
+  background-color: #fff;
   width: 70%;
   max-width: 1000px;
   padding: 1rem;
+  margin: 2rem;
 }
 
 .cart .cart-container .cart-details {
@@ -728,6 +731,7 @@ body {
 }
 
 .cart .container .checkout {
+  background-color: #fff;
   width: 30%;
   max-width: 400px;
   padding: 1rem;
